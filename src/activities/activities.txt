@@ -35,6 +35,7 @@ erase
 erase_2clic
 erase_clic
 explore_farm_animals
+explore_monuments
 explore_world_animals
 explore_world_music
 fifteen
@@ -92,6 +93,7 @@ money
 money_back
 money_back_cents
 money_cents
+monuments
 mosaic
 numbers-odd-even
 paintings
