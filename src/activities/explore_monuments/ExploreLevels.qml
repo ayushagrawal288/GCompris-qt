@@ -96,7 +96,7 @@ ActivityBase {
             property alias bonus: bonus
             property alias score: score
             property alias dataModel: dataModel
-            property alias dataset: dataset
+            property alias dataset: dataset.item
             property alias instruction: instruction
             property alias instructionText: instructionText
             property alias descriptionPanel: descriptionPanel
@@ -122,10 +122,10 @@ ActivityBase {
 
         Repeater {
             id: dataModel
-            model: dataset.item.tab.length
+            model: dataset.tab.length
             Animals {
                 questionId: index
-                source: dataset.item.tab[index].image
+                source: dataset.tab[index].image
                 x: background.playX + background.playWidth * dataset.tab[index].x - width / 2
                 y: background.playY + background.playHeight * dataset.tab[index].y - height / 2
                 width: background.playWidth * dataset.tab[index].width
