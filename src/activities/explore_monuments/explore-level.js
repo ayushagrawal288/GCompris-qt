@@ -50,7 +50,7 @@ function stop() {
 
 function initLevel() {
     items.bar.level = (currentlevel) + (items.currentLevel + 1)
-    var filename = url + "board" + "/" + "board" + currentlevel + ".qml"
+    var filename = url + "board" + "/" + "board" + currentlevel + ".js"
     items.dataset.source = filename
 //    var leveldata = items.dataset.item
 //    items.backgroundImage = leveldata.backgroundImage.source
