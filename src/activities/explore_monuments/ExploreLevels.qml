@@ -26,14 +26,14 @@ import GCompris 1.0
 import QtGraphicalEffects 1.0
 
 import "../../core"
-import "../explore_farm_animals"
+//import "../explore_farm_animals"
 import "explore-level.js" as Activity
 
 ActivityBase {
     id: activity
 
 //    property var dataset
-    property string backgroundImage
+//    property string backgroundImage
     property int numberofLevel
     property string url : "qrc:/gcompris/src/activities/explore_monuments/resource/"
     property bool hasAudioQuestions
@@ -50,7 +50,7 @@ ActivityBase {
 
         Image {
             id: bg
-            source: backgroundImage
+            source: dataset.item.backgroundImage
             sourceSize.width: 2000 * ApplicationInfo.ratio
             sourceSize.height: 2000 * ApplicationInfo.ratio
             width: 2000 * background.playRatio
@@ -95,22 +95,30 @@ ActivityBase {
             property alias bar: bar
             property alias bonus: bonus
             property alias score: score
+            property alias subscore: subscore
             property alias dataModel: dataModel
-            property alias dataset: dataset.item
+            property alias dataset: dataset
             property alias instruction: instruction
             property alias instructionText: instructionText
             property alias descriptionPanel: descriptionPanel
             property bool hasAudioQuestions: activity.hasAudioQuestions
-            property int currentLevel
+//            property int currentLevel
             property string currentAudio
-//            property string backgroundImage
+//            property string backgroundImage: bg
             property var questionOrder
-            property var currentQuestion: items.dataset.tab[items.questionOrder[score.currentSubLevel]]
+            property var currentQuestion: items.dataset ? items.dataset.item.tab[items.questionOrder[subscore.currentSubLevel]] : ""
         }
 
         Loader{
             id : dataset
             asynchronous: false
+            onStatusChanged: {
+                // todo check if this should be done there. Probably because model is empty before loading a dataset or may not have the good size after changing level!
+                if (status == Loader.Ready) {
+                    // create table of size N filled with numbers from 0 to N
+                    items.questionOrder = Array.apply(null, {length: items.dataModel.count}).map(Number.call, Number)
+                }
+            }
         }
 
         onStart: { Activity.start(items, url, numberofLevel) }
@@ -122,19 +130,19 @@ ActivityBase {
 
         Repeater {
             id: dataModel
-            model: dataset.tab.length
+            model: dataset && dataset.item && dataset.item.tab ? dataset.item.tab.length : 0
             Animals {
                 questionId: index
-                source: dataset.tab[index].image
-                x: background.playX + background.playWidth * dataset.tab[index].x - width / 2
-                y: background.playY + background.playHeight * dataset.tab[index].y - height / 2
-                width: background.playWidth * dataset.tab[index].width
-                height: background.playHeight * dataset.tab[index].height
-                title: dataset.tab[index].title
-                description: dataset.tab[index].text
-                imageSource: dataset.tab[index].image2
-                question: dataset.tab[index].text2
-                audio: dataset.tab[index].audio !== undefined ? dataset.tab[index].audio : ""
+                source: dataset.item.tab[index].image
+                x: background.playX + background.playWidth * dataset.item.tab[index].x - width / 2
+                y: background.playY + background.playHeight * dataset.item.tab[index].y - height / 2
+                width: background.playWidth * dataset.item.tab[index].width
+                height: background.playHeight * dataset.item.tab[index].height
+                title: dataset.item.tab[index].title
+                description: dataset.item.tab[index].text
+                imageSource: dataset.item.tab[index].image2
+                question: dataset.item.tab[index].text2
+                audio: dataset.item.tab[index].audio !== undefined ? dataset.item.tab[index].audio : ""
                 Component.onCompleted: {
                     displayDescription.connect(displayDescriptionItem)
                 }
@@ -175,6 +183,11 @@ ActivityBase {
             }
         }
 
+        Score {
+            id: score
+            visible: true
+        }
+
         Row {
             id: row
             spacing: 10 * ApplicationInfo.ratio
@@ -194,7 +207,7 @@ ActivityBase {
                     radius: 10
                     border.width: 3
                     border.color: "black"
-                    visible: items.currentLevel == 2 || (items.currentLevel == 1 && !items.hasAudioQuestions)
+                    visible: items.score.currentSubLevel == 3 || (items.score.currentSubLevel == 2 && !items.hasAudioQuestions)
                     GCText {
                         id: questionText
                         horizontalAlignment: Text.AlignHCenter
@@ -203,7 +216,8 @@ ActivityBase {
                         color: "black"
                         width: parent.width
                         wrapMode: Text.Wrap
-                        text: items.currentQuestion.text2
+                        // todo handle changing of text depending on the level
+                        text: items.currentQuestion ? items.currentQuestion.text2 : ""
                     }
                 }
 
@@ -224,7 +238,7 @@ ActivityBase {
                         color: "black"
                         width: parent.width
                         wrapMode: Text.Wrap
-                        text: activity.dataset.instruction[bar.level - 1].text
+                        text: dataset.item ? dataset.item.instruction : ""
                     }
                     MouseArea {
                         anchors.fill: parent
@@ -239,8 +253,8 @@ ActivityBase {
                 spacing: 10 * ApplicationInfo.ratio
 
                 Score {
-                    id: score
-                    visible: items.currentLevel != 0
+                    id: subscore
+                    visible: items.score.currentSubLevel != 1
                     anchors {
                         bottom: undefined
                         right: undefined
@@ -252,7 +266,7 @@ ActivityBase {
                     source: "qrc:/gcompris/src/core/resource/bar_repeat.svg";
                     sourceSize.width: 60 * ApplicationInfo.ratio
                     anchors.right: parent.right
-                    visible: items.currentLevel == 1 && activity.hasAudioQuestions //&& ApplicationSettings.isAudioVoicesEnabled
+                    visible: items.score.currentSubLevel == 2 && activity.hasAudioQuestions //&& ApplicationSettings.isAudioVoicesEnabled
                     onClicked: Activity.repeat();
                 }
             }

@@ -34,7 +34,7 @@ import "../explore_farm_animals"
         numberofLevel: 2
         url : "qrc:/gcompris/src/activities/explore_monuments/resource/"
 //        dataset: Dataset
-        backgroundImage: "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/background4.png"
+//        backgroundImage: "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/background4.png"
         hasAudioQuestions: false
     }
 

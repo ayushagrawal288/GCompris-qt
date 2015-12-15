@@ -22,6 +22,8 @@
 import QtQuick 2.0
 
 QtObject {
+
+   property string backgroundImage: "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/background4.png"
    property string instruction: qsTr("Drag and Drop the items to make them match")
    property var tab : [
             {
@@ -102,7 +104,7 @@ QtObject {
                 "width" : "0.07"
             }
         ]
-
+}
 //var instruction = [
 //            {
 //                "text": qsTr("Explore Monuments from around the world.")
