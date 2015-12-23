@@ -1,9 +1,10 @@
 /* GCompris - Explore.qml
 *
-* Copyright (C) 2015 Djalil MESLI <djalilmesli@gmail.com>
+* Copyright (C) 2015 Ayush Agrawal <ayushagrawal288@gmail.com>
 *
 * Authors:
 *   Beth Hadley <bethmhadley@gmail.com> (GTK+ version)
+*   Ayush Agrawal <ayushagrawal288@gmail.com> (Qt Quick port)
 *   Djalil MESLI <djalilmesli@gmail.com> (Qt Quick port)
 *   Johnny Jazeix <jazeix@gmail.com> (Qt Quick port)
 *
@@ -131,7 +132,7 @@ ActivityBase {
         Repeater {
             id: dataModel
             model: dataset && dataset.item && dataset.item.tab ? dataset.item.tab.length : 0
-            Animals {
+            AnimalLevels {
                 questionId: index
                 source: dataset.item.tab[index].image
                 x: background.playX + background.playWidth * dataset.item.tab[index].x - width / 2
@@ -156,7 +157,7 @@ ActivityBase {
             descriptionPanel.visible = true
         }
 
-        AnimalDescription {
+        AnimalDescriptionLevels {
             id: descriptionPanel
             width: parent.width
             height: parent.height
@@ -238,7 +239,7 @@ ActivityBase {
                         color: "black"
                         width: parent.width
                         wrapMode: Text.Wrap
-                        text: dataset.item ? dataset.item.instruction : ""
+                        text: dataset.item ? dataset.item.instruction[items.score.currentSubLevel - 1].text : ""
                     }
                     MouseArea {
                         anchors.fill: parent

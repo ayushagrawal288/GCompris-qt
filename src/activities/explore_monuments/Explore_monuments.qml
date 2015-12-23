@@ -1,10 +1,10 @@
 /* GCompris - explore_world_animals.qml
 *
-* Copyright (C) 2015 Johnny Jazeix <jazeix@gmail.com>
+* Copyright (C) 2015 Ayush Agrawal <ayushagrawal288@gmail.com>
 *
 * Authors:
 *   Beth Hadley <bethmhadley@gmail.com> (GTK+ version)
-*   Johnny Jazeix <jazeix@gmail.com> (Qt Quick port)
+*   Ayush Agrawal <ayushagrawal288@gmail.com> (Qt Quick port)
 *
 *   This program is free software; you can redistribute it and/or modify
 *   it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ import QtQuick 2.1
 import GCompris 1.0
 
 //import "../explore_monuments"
-import "../explore_farm_animals"
+//import "../explore_farm_animals"
 //import "explore_monuments.js" as Dataset
 
     ExploreLevels {

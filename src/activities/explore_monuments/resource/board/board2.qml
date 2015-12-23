@@ -22,93 +22,149 @@
 import QtQuick 2.0
 
 QtObject {
-   property string backgroundImage: "qrc:/gcompris/src/activities/explore_monuments/resource/india/background.png"
-   property string instruction: qsTr("Drag and Drop the items to make them match")
-   property var tab : [
-            {
-                "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
-                "title": qsTr("Chichén Itzá"),
-                "text": qsTr("Chichén Itzá (at the mouth of the well of the Itza) was a large pre-Columbian city built by the Maya people of the Terminal Classic period. The archaeological site is located in Tinúm Municipality, Yucatán State, Mexico."),
-                "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/chichenitza.jpg",
-                "text2": qsTr("Chichén Itzá"),
-                "x" : "0.159",
-                "y" : "0.474",
-                "height" : "0.07",
-                "width" : "0.07"
-            },
-            {
-                "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
-                "title": qsTr("Colosseum"),
-                "text": qsTr("Colosseum is an oval amphitheatre in the centre of the city of Rome, Italy. Built of concrete and sand, it is the largest amphitheatre ever built and is considered one of the greatest works of architecture and engineering ever. Construction began under the emperor Vespasian in 72 AD, and was completed in 80 AD under his successor and heir Titus. Further modifications were made during the reign of Domitian (81–96)."),
-                "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/romancolosseum.jpg",
-                "text2": qsTr("Colosseum"),
-                "x" : "0.489",
-                "y" : "0.306",
-                "height" : "0.07",
-                "width" : "0.07"
-            },
-            {
-                "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
-                "title": qsTr("Christ the Redeemer"),
-                "text": qsTr("Christ the Redeemer is an Art Deco statue of Jesus Christ in Rio de Janeiro, Brazil. A symbol of Christianity across the world, the statue has also become a cultural icon of both Rio de Janeiro and Brazil."),
-                "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/christtheredeemer.jpg",
-                "text2": qsTr("Christ the Redeemer"),
-                "x" : "0.311",
-                "y" : "0.684",
-                "height" : "0.07",
-                "width" : "0.07"
-            },
-            {
-                "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
-                "title": qsTr("The Great Wall of China"),
-                "text": qsTr("The Great Wall of China built along an east-to-west line across the historical northern borders of China to protect the Chinese states and empires against the raids and invasions of the various nomadic groups of the Eurasian Steppe. Several walls were being built as early as the 7th century. The Great Wall stretches from Dandong in the east, to Lop Lake in the west, along an arc that roughly delineates the southern edge of Inner Mongolia."),
-                "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/greatwallofchina.jpg",
-                "text2": qsTr("The Great Wall of China"),
-                "x" : "0.775",
-                "y" : "0.342",
-                "height" : "0.07",
-                "width" : "0.07"
-            },
-            {
-                "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
-                "title": qsTr("Machu Picchu"),
-                "text": qsTr("Machu Picchu is situated on a mountain ridge above the Sacred Valley which is 80 kilometres (50 mi) northwest of Cuzco and through which the Urubamba River flows. Most archaeologists believe that Machu Picchu was built as an estate for the Inca emperor Pachacuti (1438–1472). Often mistakenly referred to as the 'Lost City of the Incas', it is the most familiar icon of Inca civilization."),
-                "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/machupicchu.jpg",
-                "text2": qsTr("Machu Picchu"),
-                "x" : "0.220",
-                "y" : "0.654",
-                "height" : "0.07",
-                "width" : "0.07"
-            },
-            {
-                "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
-                "title": qsTr("Petra"),
-                "text": qsTr("Petra is a historical and archaeological city in the southern Jordanian governorate of Ma'an that is famous for its rock-cut architecture and water conduit system. Established possibly as early as 312 BC as the capital city of the Arab Nabataeans, it is a symbol of Jordan, as well as Jordan's most-visited tourist attraction."),
-                "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/petrajordan.jpg",
-                "text2": qsTr("Petra"),
-                "x" : "0.575",
-                "y" : "0.398",
-                "height" : "0.07",
-                "width" : "0.07"
-            },
-            {
-                "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
-                "title": qsTr("Taj Mahal, India"),
-                "text": qsTr("The Taj Mahal  is a white marble mausoleum located on the southern bank of the Yamuna River in the Indian city of Agra. It was commissioned in 1632 by the Mughal emperor Shah Jahan reigned to house the tomb of his favorite wife of three, Mumtaz Mahal."),
-                "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/tajmahal.jpeg",
-                "text2": qsTr("Taj Mahal"),
-                "x" : "0.718",
-                "y" : "0.410",
-                "height" : "0.07",
-                "width" : "0.07"
-            }
-        ]
+    property string backgroundImage: "qrc:/gcompris/src/activities/explore_monuments/resource/india/background.png"
+    //   property string instruction: qsTr("Drag and Drop the items to make them match")
+    property var tab : [
+        {
+            "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
+            "title": qsTr("Golden Temple, Punjab"),
+            "text": qsTr("Chichén Itzá (at the mouth of the well of the Itza) was a large pre-Columbian city built by the Maya people of the Terminal Classic period. The archaeological site is located in Tinúm Municipality, Yucatán State, Mexico."),
+            "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/india/goldentemplepunjab.png",
+            "text2" : qsTr("Golden Temple, Punjab"),
+            "x" : "0.278",
+            "y" : "0.228",
+            "height" : "0.07",
+            "width" : "0.07"
+        },
+        {
+            "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
+            "title": qsTr("Hawa Mahal, Rajasthan"),
+            "text": qsTr("Chichén Itzá (at the mouth of the well of the Itza) was a large pre-Columbian city built by the Maya people of the Terminal Classic period. The archaeological site is located in Tinúm Municipality, Yucatán State, Mexico."),
+            "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/india/hawamahalrajasthan.png",
+            "text2" : qsTr("Hawa Mahal, Rajasthan"),
+            "x" : "0.216",
+            "y" : "0.377",
+            "height" : "0.07",
+            "width" : "0.07"
+        },
+        {
+            "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
+            "title": qsTr("Taj Mahal, Uttar Pradesh"),
+            "text": qsTr("Chichén Itzá (at the mouth of the well of the Itza) was a large pre-Columbian city built by the Maya people of the Terminal Classic period. The archaeological site is located in Tinúm Municipality, Yucatán State, Mexico."),
+            "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/india/tajmahal.png",
+            "text2" : qsTr("Taj Mahal, Uttar Pradesh"),
+            "x" : "0.459",
+            "y" : "0.36",
+            "height" : "0.07",
+            "width" : "0.07"
+        },
+        {
+            "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
+            "title": qsTr("Gateway of India, Maharashtra"),
+            "text": qsTr("Chichén Itzá (at the mouth of the well of the Itza) was a large pre-Columbian city built by the Maya people of the Terminal Classic period. The archaeological site is located in Tinúm Municipality, Yucatán State, Mexico."),
+            "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/india/gatewayindiamaharastra.png",
+            "text2" : qsTr("Gateway of India, Maharashtra"),
+            "x" : "0.179",
+            "y" : "0.610",
+            "height" : "0.07",
+            "width" : "0.07"
+        },
+        {
+            "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
+            "title": qsTr("Sanchi Stupas, Madhya Pradesh"),
+            "text": qsTr("Chichén Itzá (at the mouth of the well of the Itza) was a large pre-Columbian city built by the Maya people of the Terminal Classic period. The archaeological site is located in Tinúm Municipality, Yucatán State, Mexico."),
+            "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/india/sanchistupasmadyapradesh.png",
+            "text2" : qsTr("Sanchi Stupas, Madhya Pradesh"),
+            "x" : "0.375",
+            "y" : "0.461",
+            "height" : "0.07",
+            "width" : "0.07"
+        },
+        {
+            "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
+            "title": qsTr("Ajanta Caves, Maharashtra"),
+            "text": qsTr("Chichén Itzá (at the mouth of the well of the Itza) was a large pre-Columbian city built by the Maya people of the Terminal Classic period. The archaeological site is located in Tinúm Municipality, Yucatán State, Mexico."),
+            "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/india/ajantacavemaharastra.png",
+            "text2" : qsTr("Ajanta Caves, Maharashtra"),
+            "x" : "0.314",
+            "y" : "0.624",
+            "height" : "0.07",
+            "width" : "0.07"
+        },
+        {
+            "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
+            "title": qsTr("Sun Temple, Orrisa"),
+            "text": qsTr("Chichén Itzá (at the mouth of the well of the Itza) was a large pre-Columbian city built by the Maya people of the Terminal Classic period. The archaeological site is located in Tinúm Municipality, Yucatán State, Mexico."),
+            "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/india/suntempleorrisa.png",
+            "text2" : qsTr("Sun Temple, Orrisa"),
+            "x" : "0.591",
+            "y" : "0.584",
+            "height" : "0.07",
+            "width" : "0.07"
+        },
+        {
+            "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
+            "title": qsTr("Mysore Palace, Karnataka"),
+            "text": qsTr("Chichén Itzá (at the mouth of the well of the Itza) was a large pre-Columbian city built by the Maya people of the Terminal Classic period. The archaeological site is located in Tinúm Municipality, Yucatán State, Mexico."),
+            "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/india/mysorepalacekarnataka.png",
+            "text2" : qsTr("Mysore Palace, Karnataka"),
+            "x" : "0.295",
+            "y" : "0.748",
+            "height" : "0.07",
+            "width" : "0.07"
+        },
+        {
+            "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
+            "title": qsTr("Chaar Minar, Telangana"),
+            "text": qsTr("Chichén Itzá (at the mouth of the well of the Itza) was a large pre-Columbian city built by the Maya people of the Terminal Classic period. The archaeological site is located in Tinúm Municipality, Yucatán State, Mexico."),
+            "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/india/chaarminartelangana.png",
+            "text2" : qsTr("Chaar Minar, Telangana"),
+            "x" : "0.405",
+            "y" : "0.66",
+            "height" : "0.07",
+            "width" : "0.07"
+        },
+        {
+            "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
+            "title": qsTr("Victoria Memorial, West Bengal"),
+            "text": qsTr("Chichén Itzá (at the mouth of the well of the Itza) was a large pre-Columbian city built by the Maya people of the Terminal Classic period. The archaeological site is located in Tinúm Municipality, Yucatán State, Mexico."),
+            "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/india/victoriamemorialwstbengal.png",
+            "text2" : qsTr("Victoria Memorial, West Bengal"),
+            "x" : "0.689",
+            "y" : "0.445",
+            "height" : "0.07",
+            "width" : "0.07"
+        },
+        {
+            "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
+            "title": qsTr("Rang Ghar, Assam"),
+            "text": qsTr("Chichén Itzá (at the mouth of the well of the Itza) was a large pre-Columbian city built by the Maya people of the Terminal Classic period. The archaeological site is located in Tinúm Municipality, Yucatán State, Mexico."),
+            "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/india/ranggharassam.png",
+            "text2" : qsTr("Rang Ghar, Assam"),
+            "x" : "0.842",
+            "y" : "0.37",
+            "height" : "0.07",
+            "width" : "0.07"
+        },
+        {
+            "image": "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/key.png",
+            "title": qsTr("Qutub Minar, Delhi"),
+            "text": qsTr("Chichén Itzá (at the mouth of the well of the Itza) was a large pre-Columbian city built by the Maya people of the Terminal Classic period. The archaeological site is located in Tinúm Municipality, Yucatán State, Mexico."),
+            "image2": "qrc:/gcompris/src/activities/explore_monuments/resource/india/qutubminardelhi.png",
+            "text2" : qsTr("Qutub Minar, Delhi"),
+            "x" : "0.336",
+            "y" : "0.31",
+            "height" : "0.07",
+            "width" : "0.07"
+        }
+    ]
+
+    property var instruction : [
+        {
+            "text": qsTr("Explore Monuments from around the globe.")
+        },
+        {
+            "text": qsTr("Click on location where the given Monument is.")
+        }
+    ]
 }
-//var instruction = [
-//            {
-//                "text": qsTr("Explore Monuments from around the world.")
-//            },
-//            {
-//                "text": qsTr("Click on location where the given Monument is located.")
-//            }
-//        ]

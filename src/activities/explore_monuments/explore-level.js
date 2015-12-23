@@ -1,9 +1,10 @@
 /* GCompris - explore.js
 *
-* Copyright (C) 2015 Djalil MESLI <djalilmesli@gmail.com>
+* Copyright (C) 2015 Ayush Agrawal <ayushagrawal288@gmail.com>
 *
 * Authors:
 *   Beth Hadley <bethmhadley@gmail.com> (GTK+ version)
+*   Ayush Agrawal <ayushagrawal288@gmail.com> (Qt Quick port)
 *   Djalil MESLI <djalilmesli@gmail.com> (Qt Quick port)
 *
 *   This program is free software; you can redistribute it and/or modify
@@ -24,11 +25,11 @@
 .import GCompris 1.0 as GCompris
 .import "qrc:/gcompris/src/core/core.js" as Core
 
-var levels
+var numberofLevels
 var items
 var url
 //var numberofSubLevel
-var currentlevel = 1
+var currentLevel = 1
 
 /* todo add a 3rd variable to handle "subsublevels" :)
  * There should be one variable to say which level we are (for monuments: world, india..., for others explore activities, there is only one).
@@ -41,7 +42,7 @@ var currentlevel = 1
 function start(items_,url_,levelcount_) {
     items = items_
     url = url_
-    levels = levelcount_
+    numberofLevels = levelcount_
 //    items.currentLevel = 0
     items.score.currentSubLevel = 1
 //    items.score.numberOfSubLevels = items.dataModel.count
@@ -55,8 +56,8 @@ function stop() {
 }
 
 function initLevel() {
-    items.bar.level = (currentlevel)/* + (items.currentLevel + 1)*/
-    var filename = url + "board" + "/" + "board" + currentlevel + ".qml"
+    items.bar.level = (currentLevel)/* + (items.currentLevel + 1)*/
+    var filename = url + "board" + "/" + "board" + currentLevel + ".qml"
     items.dataset.source = filename
 //    var leveldata = items.dataset.item
 //    items.backgroundImage = leveldata.backgroundImage.source
@@ -80,12 +81,12 @@ function initLevel() {
 
 function nextLevel() {
     ++items.score.currentSubLevel
-    if(levels <= currentlevel && items.score.numberOfSubLevels < items.score.currentSubLevel)
+    if(numberofLevels <= currentLevel && items.score.numberOfSubLevels < items.score.currentSubLevel)
     {
-        currentlevel = 0
+        currentLevel = 0
     }
     if (items.score.numberOfSubLevels < items.score.currentSubLevel) {
-        currentlevel++
+        currentLevel++
         items.score.currentSubLevel = 1
     }
     initLevel();
@@ -96,8 +97,15 @@ function nextLevel() {
 }
 
 function previousLevel() {
-    if(--items.score.currentSubLevel < 1) {
-        items.score.currentSubLevel = levels - 1
+    --items.score.currentSubLevel
+    if(currentLevel <= 1 && items.score.currentSubLevel < 1)
+    {
+        currentLevel = numberofLevels
+        items.score.currentSubLevel = items.score.numberOfSubLevels
+    }
+    else if(items.score.currentSubLevel < 1) {
+        currentLevel--
+        items.score.currentSubLevel = items.score.numberOfSubLevels
     }
     initLevel();
 
