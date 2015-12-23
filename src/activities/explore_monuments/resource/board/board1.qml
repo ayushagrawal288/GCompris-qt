@@ -105,12 +105,12 @@ QtObject {
             }
         ]
 
-    property var instruction : [
+    property var instructions : [
             {
-                "text": qsTr("Explore Monuments from around the world.")
+                "text": qsTr("The 7 Wonders of World.")
             },
             {
-                "text": qsTr("Click on location where the given Monument is located.")
+                "text": qsTr("Click on location where the given Monument is")
             }
         ]
 }

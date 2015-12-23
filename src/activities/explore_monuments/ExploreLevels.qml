@@ -239,7 +239,7 @@ ActivityBase {
                         color: "black"
                         width: parent.width
                         wrapMode: Text.Wrap
-                        text: dataset.item ? dataset.item.instruction[items.score.currentSubLevel - 1].text : ""
+                        text: dataset.item ? dataset.item.instructions[items.score.currentSubLevel - 1].text : ""
                     }
                     MouseArea {
                         anchors.fill: parent

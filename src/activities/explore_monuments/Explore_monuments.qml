@@ -31,7 +31,7 @@ import GCompris 1.0
 //        questionId : index
         id: activity
 
-        numberofLevel: 2
+        numberofLevel: 5
         url : "qrc:/gcompris/src/activities/explore_monuments/resource/"
 //        dataset: Dataset
 //        backgroundImage: "qrc:/gcompris/src/activities/explore_monuments/resource/wonders/background4.png"
