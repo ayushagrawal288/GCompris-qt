@@ -1,6 +1,6 @@
 /* GCompris - ActivityInfo.qml
  *
- * Copyright (C) 2015 Johnny Jazeix <jazeix@gmail.com>
+ * Copyright (C) 2015 Bruno Coudoin <bruno.coudoin@gcompris.net>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,18 +18,17 @@
 import GCompris 1.0
 
 ActivityInfo {
-  name: "readingv/Readingv.qml"
-  difficulty: 2
-  icon: "readingv/reading.svg"
-  author: "Johnny Jazeix &lt;jazeix@gmail.com&gt;"
-  demo: true
-  title: qsTr("Vertical-reading practice")
-  description: qsTr("Read a vertical list of words and work out if a given word is in it.")
-//  intro: "Read a list of words and work out if a given word is in it."
-  goal: qsTr("Reading training in a limited time")
-  prerequisite: qsTr("Reading")
-  manual: qsTr("A word is shown at the top right of the board. A list of words will appear and disappear on the left. Does the given word belong to the list?")
+  name: "baby_wordprocessor/BabyWordprocessor.qml"
+  difficulty: 1
+  icon: "baby_wordprocessor/baby_wordprocessor.svg"
+  author: "Bruno Coudoin &lt;bruno.coudoin@gcompris.net&gt;"
+  demo: false
+  title: qsTr("A baby wordprocessor")
+  description: qsTr("A simplistic word processor to let the children play around with a keyboard and see letters.")
+  //intro: "A simplistic word processor to play around with the keyboard"
+  goal: qsTr("Discover the keyboard and the letters.")
+  prerequisite: ""
+  manual: qsTr("Just type on the real or virtual keyboard like in a wordprocessor.")
   credit: ""
-  section: "reading"
+  section: "computer keyboard reading"
 }
-
