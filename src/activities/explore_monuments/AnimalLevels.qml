@@ -1,4 +1,4 @@
-/* GCompris - Animals.qml
+/* GCompris - AnimalLevels.qml
 *
 * Copyright (C) 2015 Ayush Agrawal <ayushagrawal288@gmail.com>
 *
